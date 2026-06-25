@@ -7,6 +7,20 @@ const colorCode = document.getElementById("color-code");
 const history = document.getElementById("history");
 const toast = document.getElementById("toast");
 
+
+// Load Saved Theme
+
+if (localStorage.getItem("theme") === "dark") {
+
+    document.body.classList.add("dark-mode");
+
+    themeBtn.textContent = "☀️ Light Mode";
+
+}
+
+
+// Generate Random Gradient
+
 btn.addEventListener("click", () => {
 
     const color1 =
@@ -35,9 +49,13 @@ btn.addEventListener("click", () => {
 
     history.prepend(colorItem);
 
+    // Keep only last 5 colors
+
     if (history.children.length > 5) {
         history.removeChild(history.lastElementChild);
     }
+
+    // Reuse old color
 
     colorItem.addEventListener("click", () => {
 
@@ -50,6 +68,9 @@ btn.addEventListener("click", () => {
     });
 
 });
+
+
+// Copy Color Code
 
 copyBtn.addEventListener("click", () => {
 
@@ -64,6 +85,9 @@ copyBtn.addEventListener("click", () => {
     }, 2000);
 
 });
+
+
+// Dark Mode Toggle
 
 themeBtn.addEventListener("click", () => {
 
@@ -86,11 +110,16 @@ themeBtn.addEventListener("click", () => {
 });
 
 
+// Spacebar Shortcut
 
 document.addEventListener("keydown", (event) => {
 
     if (event.code === "Space") {
+
+        event.preventDefault();
+
         btn.click();
+
     }
 
 });
