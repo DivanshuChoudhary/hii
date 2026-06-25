@@ -12,4 +12,6 @@ btn.addEventListener("click", () => {
     colorBox.style.backgroundColor = randomColor;
     colorCode.textContent = randomColor;
 
+    document.body.style.backgroundColor = randomColor;
+
 });
