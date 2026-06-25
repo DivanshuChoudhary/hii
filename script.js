@@ -1,5 +1,7 @@
 const btn = document.getElementById("btn");
 const copyBtn = document.getElementById("copy-btn");
+const themeBtn = document.getElementById("theme-btn");
+
 const colorBox = document.querySelector(".color-box");
 const colorCode = document.getElementById("color-code");
 const history = document.getElementById("history");
@@ -51,5 +53,17 @@ colorItem.addEventListener("click", () => {
     colorBox.style.backgroundColor = randomColor;
     document.body.style.backgroundColor = randomColor;
     colorCode.textContent = randomColor;
+
+});
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        themeBtn.textContent = "☀️ Light Mode";
+    }else{
+        themeBtn.textContent = "🌙 Dark Mode";
+    }
 
 });
