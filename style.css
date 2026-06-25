@@ -28,6 +28,7 @@ body{
     border:2px solid #ddd;
     margin:20px auto;
     border-radius:10px;
+    transition: all 0.3s ease;
 }
 
 button{
