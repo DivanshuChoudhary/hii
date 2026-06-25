@@ -70,12 +70,22 @@ themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 
     if (document.body.classList.contains("dark-mode")) {
+
         themeBtn.textContent = "☀️ Light Mode";
+
+        localStorage.setItem("theme", "dark");
+
     } else {
+
         themeBtn.textContent = "🌙 Dark Mode";
+
+        localStorage.setItem("theme", "light");
+
     }
 
 });
+
+
 
 document.addEventListener("keydown", (event) => {
 
