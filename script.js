@@ -39,3 +39,17 @@ copyBtn.addEventListener("click", () => {
     alert(`Copied: ${colorCode.textContent}`);
 
 });
+
+history.prepend(colorItem);
+
+if (history.children.length > 5) {
+    history.removeChild(history.lastElementChild);
+}
+
+colorItem.addEventListener("click", () => {
+
+    colorBox.style.backgroundColor = randomColor;
+    document.body.style.backgroundColor = randomColor;
+    colorCode.textContent = randomColor;
+
+});
