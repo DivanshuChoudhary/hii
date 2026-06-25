@@ -8,28 +8,41 @@ const history = document.getElementById("history");
 
 btn.addEventListener("click", () => {
 
-    const randomColor =
-        "#" + Math.floor(Math.random() * 16777215)
-        .toString(16)
-        .padStart(6, "0");
+   const color1 =
+    "#" + Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, "0");
 
-    colorBox.style.backgroundColor = randomColor;
-    colorCode.textContent = randomColor;
-    document.body.style.backgroundColor = randomColor;
+const color2 =
+    "#" + Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, "0");
+
+colorBox.style.background =
+    `linear-gradient(45deg, ${color1}, ${color2})`;
+
+document.body.style.background =
+    `linear-gradient(45deg, ${color1}, ${color2})`;
+
+colorCode.textContent =
+    `${color1} → ${color2}`;
 
     const colorItem = document.createElement("div");
 
     colorItem.classList.add("history-color");
-    colorItem.style.backgroundColor = randomColor;
-
+    colorItem.style.background =
+    `linear-gradient(45deg, ${color1}, ${color2})`;
     history.prepend(colorItem);
 
     colorItem.addEventListener("click", () => {
+colorBox.style.background =
+    `linear-gradient(45deg, ${color1}, ${color2})`;
 
-        colorBox.style.backgroundColor = randomColor;
-        document.body.style.backgroundColor = randomColor;
-        colorCode.textContent = randomColor;
+document.body.style.background =
+    `linear-gradient(45deg, ${color1}, ${color2})`;
 
+colorCode.textContent =
+    `${color1} → ${color2}`;
     });
 
 });
