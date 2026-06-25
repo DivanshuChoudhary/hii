@@ -42,3 +42,34 @@ button{
 button:hover{
     background:#0056b3;
 }
+
+#copy-btn{
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#copy-btn:hover{
+    background: #218838;
+}
+
+#history{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.history-color{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+

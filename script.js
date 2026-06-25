@@ -1,6 +1,8 @@
 const btn = document.getElementById("btn");
+const copyBtn = document.getElementById("copy-btn");
 const colorBox = document.querySelector(".color-box");
 const colorCode = document.getElementById("color-code");
+const history = document.getElementById("history");
 
 btn.addEventListener("click", () => {
 
@@ -11,7 +13,29 @@ btn.addEventListener("click", () => {
 
     colorBox.style.backgroundColor = randomColor;
     colorCode.textContent = randomColor;
-
     document.body.style.backgroundColor = randomColor;
+
+    const colorItem = document.createElement("div");
+
+    colorItem.classList.add("history-color");
+    colorItem.style.backgroundColor = randomColor;
+
+    history.prepend(colorItem);
+
+    colorItem.addEventListener("click", () => {
+
+        colorBox.style.backgroundColor = randomColor;
+        document.body.style.backgroundColor = randomColor;
+        colorCode.textContent = randomColor;
+
+    });
+
+});
+
+copyBtn.addEventListener("click", () => {
+
+    navigator.clipboard.writeText(colorCode.textContent);
+
+    alert(`Copied: ${colorCode.textContent}`);
 
 });
